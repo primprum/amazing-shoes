@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+
+  /* space between line */
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+
+  /* what is this? */
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.container {
+  /* so it doesn't touch the side */
+  width: 85%;
+
+  max-width: 65em;
+  margin: 0 auto;
+}
+
+/* what this does is giving a margin top to the btn, paragraph, but not on primary-title */
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+
+/* how to create button manually */
+.btn {
+  /* if we don't use this, then button box will cover the paragraph above */
+  display: inline-block;
+
+  /* remove the link underline */
+  text-decoration: none;
+
+  /* color: white; */
+
+  /* different approach with color */
+  color: var(--clr-text, #fff);
+
+  /* making it bold */
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  font-size: 1.125rem;
+
+  /* learn this */
+  padding: 0.5em 1.25em;
+
+  /* background: blue; */
+  background: var(--clr-accent, blue);
+
+  /* creating curve */
+  border-radius: 0.25em;
+
+  /* (transform) is the speed of focus changes */
+  transition: transform 250ms ease-in-out, opacity 250ms linear;
+}
+
+/* making it cool */
+.btn:hover,
+.btn:focus {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.primary-title {
+  font-size: 4rem;
+
+  /* don't know  what this does. relative size? */
+  font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero {
+  color: white;
+  text-align: center;
+  padding: 15em 0;
+
+  /* the background default if browser doesn't support */
+  background: #222;
+}
+
+/* if the browser support, then it will does this */
+@supports (background-blend-mode: multiply) {
+  .hero {
+    /* radial gradient is giving it a little color effect */
+    background: url(../img/shoe-3.png), radial-gradient(#444, #111);
+
+    /* to make background blend? learn more */
+    background-blend-mode: multiply;
+
+    /* make the background doesn't move when you scroll down*/
+    background-attachment: fixed;
+
+    /* when the screen stretch out, it doesn't become tiles */
+    background-repeat: no-repeat;
+
+    /* make the image always on the center */
+    background-position: center center;
+  }
+}
+
+/* notes in here, if you're using sass, @supports can be inside .hero, and the code will be shorter */
+/* the extension if sass is .scss, learn more about sass */
