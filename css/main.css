@@ -151,6 +151,7 @@ section {
 
 /* ========================================================================== */
 /* featured section, you need to learn about css syntax and sass */
+/* i'm thinking, what does bootstrap could help us regarding this? */
 .featured {
   background: #eee;
 }
@@ -205,3 +206,26 @@ section {
   font-size: 2.5rem;
 }
 /* ==========================================================================  */
+
+.product {
+  background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+  padding: 3em;
+  border-radius: 1em;
+  margin-bottom: 5em;
+  text-align: center;
+}
+
+/* if you're using sass, then it could be nested inside .product */
+.product__title {
+  font-size: clamp(3rem, calc(5vw + 1rem), 5.5rem);
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
+}
+
+.product__image {
+  margin: -5em 0 0 0;
+}
+
+/* =========================================================================== */
