@@ -20,6 +20,10 @@ p {
   margin: 0;
 }
 
+section {
+  padding: 7em 0;
+}
+
 .container {
   /* so it doesn't touch the side */
   width: 85%;
@@ -36,6 +40,8 @@ p {
 /* how to create button manually */
 .btn {
   /* if we don't use this, then button box will cover the paragraph above */
+  /* display: inline, means new element is in line, display: block, means new element at the new line */
+  /* further explanation: css layouting 1 (display) */
   display: inline-block;
 
   /* remove the link underline */
@@ -81,6 +87,14 @@ p {
 
   line-height: 1;
   text-transform: uppercase;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  line-height: 1;
+  color: #17353d;
+  margin-bottom: 5rem;
 }
 
 .hero {
