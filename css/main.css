@@ -208,7 +208,9 @@ section {
 /* ==========================================================================  */
 
 .product {
+  /* this is the default color, but you can setup --clr-inner or outer manually */
   background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+
   padding: 3em;
   border-radius: 1em;
   margin-bottom: 5em;
@@ -225,7 +227,57 @@ section {
 }
 
 .product__image {
+  /* making the image fancy, out of the box */
   margin: -5em 0 0 0;
 }
 
+/* ======================================================================== */
+/* learn more about this, because it makes it reaallly better */
+@media (min-width: 45em) {
+  .product {
+    text-align: left;
+    margin-bottom: 9em;
+  }
+  .product__title {
+    margin: 0;
+  }
+  .product__image {
+    float: right;
+    width: 65%;
+    shape-outside: url(../img/shoe-1.png);
+    shape-margin: 1em;
+    margin: 0 -5em 0 0;
+  }
+  .product.shoe-left .product__image {
+    float: left;
+    shape-outside: url(../img/shoe-2.png);
+    margin: 0 0 0 -5em;
+    shape-margin: 2em;
+  }
+}
+/* ========================================================================= */
+
 /* =========================================================================== */
+/* how you could setting up color manually */
+
+.hero {
+  --clr-accent: #faa700;
+}
+
+.shoe-red {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+.shoe-white {
+  --clr-inner: #fce4b3;
+  --clr-outer: #eac886;
+  --clr-accent: #2f4858;
+}
+
+.shoe-blue {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951;
+}
